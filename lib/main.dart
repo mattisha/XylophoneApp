@@ -10,11 +10,14 @@ class XylophoneApp extends StatelessWidget {
   }
 Expanded buildKey({Color color, int soundNo}) {
      return Expanded( child: Container(
-          child: FlatButton(
-          onPressed: (){
-          playSound(soundNo);
-          },
-          color: color,child: null,
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: FlatButton(
+            onPressed: (){
+            playSound(soundNo);
+            },
+            color: color,child: null,
+            ),
           ),),);}
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ Expanded buildKey({Color color, int soundNo}) {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-            buildKey(color: Colors.red,soundNo: 1),
+            buildKey(color: Colors.red,soundNo: 1,),
             buildKey(color: Colors.orange[700],soundNo: 2),
             buildKey(color: Colors.purple,soundNo: 3),
             buildKey(color: Colors.teal,soundNo: 4),
